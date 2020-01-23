@@ -1,0 +1,10 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // For ESLint
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}

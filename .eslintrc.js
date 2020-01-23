@@ -53,6 +53,7 @@ const eslintrc = {
       {
         devDependencies: [
           'config/webpack/**',
+          'config/jest/**',
           'express.js',
           'site/**',
           'tests/**',

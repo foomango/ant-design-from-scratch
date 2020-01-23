@@ -1,4 +1,4 @@
-# Ant Design Pro from Scratch
+# Ant Design from Scratch
 
 [![Travis CI][travis-image]][travis-url]
 

@@ -1,0 +1,50 @@
+@mixin button-size($height, $padding-horizontal, $font-size, $border-radius) {
+  $padding-vertical: round(($height - $font-size * $line-height-base) / 2 * 10) / 10 - $border-width-base;
+
+  height: $height;
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  border-radius: $border-radius;
+}
+
+@mixin button-variant-other($color, $background, $border) {
+  @include button-color($color, $background, $border);
+
+  &:hover,
+  &:focus {
+    @if $theme == dark {
+    } @else {
+      @include button-color(#40a9ff, #fff, #40a9ff);
+    }
+  }
+  &:active {
+    @if $theme == dark {
+    } @else {
+      @include button-color(#096dd9, #fff, #096dd9);
+    }
+  }
+}
+
+@mixin button-color($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+}
+
+// Base styles of buttons
+@mixin btn {
+  font-weight: $btn-font-weight;
+  border: $btn-border-width $btn-border-style transparent;
+  cursor: pointer;
+  user-select: none;
+  @include button-size($btn-height-base, $btn-padding-horizontal-base, $font-size-base, $btn-border-radius-base);
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+// default button style
+@mixin btn-default() {
+  @include button-variant-other($btn-default-color, $btn-default-bg, $btn-default-border);
+}

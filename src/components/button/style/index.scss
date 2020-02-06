@@ -1,0 +1,10 @@
+@import "../../../style/themes/index.scss";
+@import "./mixin";
+
+$btn-prefix-cls: #{$ant-prefix}-btn;
+
+.#{$btn-prefix-cls} {
+  line-height: $line-height-base;
+  @include btn;
+  @include btn-default;
+}

@@ -48,6 +48,7 @@ const eslintrc = {
       { declaration: false, assignment: false },
     ],
     'import/extensions': 0,
+    'import/no-named-as-default': 0,
     'import/no-extraneous-dependencies': [
       'error',
       {

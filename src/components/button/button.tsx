@@ -19,10 +19,12 @@ export interface BaseButtonProps {
 
 type ButtonProps = BaseButtonProps & NativeButtonProps
 
-const Button: React.FunctionComponent<ButtonProps> = props => {
-  const { htmlType = 'button' } = props
+export const Button: React.FunctionComponent<ButtonProps> = props => {
+  const { htmlType = 'button', type } = props
   const prefixCls = 'ant-btn'
-  const classes = classNames(prefixCls)
+  const classes = classNames(prefixCls, {
+    [`${prefixCls}-${type}`]: type,
+  })
 
   return (
     <button type={htmlType} className={classes}>

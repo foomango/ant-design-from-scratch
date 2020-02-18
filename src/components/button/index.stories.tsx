@@ -2,6 +2,7 @@ import React from 'react'
 
 import Button from '.'
 import './style'
+import './stories.scss'
 
 export default {
   title: 'Button',
@@ -9,7 +10,8 @@ export default {
 }
 
 export const Basic = () => (
-  <div>
+  <div className="button-demo">
+    <Button type="primary">Primary</Button>
     <Button>Default</Button>
   </div>
 )

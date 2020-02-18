@@ -7,6 +7,23 @@
   border-radius: $border-radius;
 }
 
+@mixin button-variant-primary($color, $background) {
+  @include button-color($color, $background, $background);
+
+  text-shadow: $btn-text-shadow;
+  box-shadow: $btn-primary-shadow;
+
+  &:hover,
+  &:focus {
+    @include button-color($color, #40a9ff, #40a9ff);
+  }
+
+  &:active,
+  &.active {
+    @include button-color($color, #096dd9, #096dd9);
+  }
+}
+
 @mixin button-variant-other($color, $background, $border) {
   @include button-color($color, $background, $border);
 
@@ -42,6 +59,11 @@
   &:focus {
     outline: 0;
   }
+}
+
+// primary button style
+@mixin btn-primary() {
+  @include button-variant-primary($btn-primary-color, $btn-primary-bg);
 }
 
 // default button style

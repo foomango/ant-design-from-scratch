@@ -1,9 +1,12 @@
+@import "../color/colors";
+
 $theme: default;
 
 // The prefix to use on all css classes from ant.
 $ant-prefix: ant;
 
 // Colors
+$primary-color: $blue-6;
 $black: #000;
 
 // Color used by default to control hover and active backgrounds and for
@@ -34,6 +37,11 @@ $btn-font-weight: 400;
 $btn-border-radius-base: $border-radius-base;
 $btn-border-width: $border-width-base;
 $btn-border-style: $border-style-base;
+$btn-primary-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+$btn-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+
+$btn-primary-color: #fff;
+$btn-primary-bg: $primary-color;
 
 $btn-default-color: $text-color;
 $btn-default-bg: $component-background;

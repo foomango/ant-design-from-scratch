@@ -13,5 +13,6 @@ export const Basic = () => (
   <div className="button-demo">
     <Button type="primary">Primary</Button>
     <Button>Default</Button>
+    <Button type="dashed">Dashed</Button>
   </div>
 )

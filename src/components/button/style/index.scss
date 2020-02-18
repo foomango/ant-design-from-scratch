@@ -11,4 +11,8 @@ $btn-prefix-cls: #{$ant-prefix}-btn;
   &-primary {
     @include btn-primary();
   }
+
+  &-dashed {
+    @include btn-dashed();
+  }
 }

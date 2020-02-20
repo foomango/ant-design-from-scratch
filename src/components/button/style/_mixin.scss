@@ -76,3 +76,14 @@
   @include button-variant-other($btn-default-color, $btn-default-bg, $btn-default-border);
   border-style: dashed;
 }
+
+// link button style
+@mixin btn-link() {
+  @include button-variant-other($link-color, transparent, transparent);
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+}

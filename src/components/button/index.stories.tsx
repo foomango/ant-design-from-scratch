@@ -14,5 +14,6 @@ export const Basic = () => (
     <Button type="primary">Primary</Button>
     <Button>Default</Button>
     <Button type="dashed">Dashed</Button>
+    <Button type="link">Link</Button>
   </div>
 )

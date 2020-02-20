@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 import { tuple } from '../../util/type'
 
-const ButtonTypes = tuple('default', 'primary', 'dashed')
+const ButtonTypes = tuple('dashed', 'default', 'link', 'primary')
 export type ButtonType = typeof ButtonTypes[number]
 const ButtonHTMLTypes = tuple('button', 'submit', 'reset')
 export type ButtonHTMLType = typeof ButtonHTMLTypes[number]

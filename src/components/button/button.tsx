@@ -3,6 +3,7 @@ import React from 'react'
 import classNames from 'classnames'
 
 import { tuple } from '../../util/type'
+import { SizeType } from '../config-provider/size-context'
 
 const ButtonTypes = tuple('dashed', 'default', 'link', 'primary')
 export type ButtonType = typeof ButtonTypes[number]
@@ -15,15 +16,30 @@ export type NativeButtonProps = {
 
 export interface BaseButtonProps {
   type?: ButtonType
+  size?: SizeType
 }
 
 type ButtonProps = BaseButtonProps & NativeButtonProps
 
 export const Button: React.FunctionComponent<ButtonProps> = props => {
-  const { htmlType = 'button', type } = props
+  const { htmlType = 'button', type, size } = props
   const prefixCls = 'ant-btn'
+
+  let sizeCls = ''
+  switch (size) {
+    case 'large':
+      sizeCls = 'lg'
+      break
+    case 'small':
+      sizeCls = 'sm'
+      break
+    default:
+      break
+  }
+
   const classes = classNames(prefixCls, {
     [`${prefixCls}-${type}`]: type,
+    [`${prefixCls}-${sizeCls}`]: sizeCls,
   })
 
   return (

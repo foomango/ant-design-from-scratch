@@ -54,10 +54,18 @@
   border: $btn-border-width $btn-border-style transparent;
   cursor: pointer;
   user-select: none;
-  @include button-size($btn-height-base, $btn-padding-horizontal-base, $font-size-base, $btn-border-radius-base);
+  @include button-size($btn-height-base, $btn-padding-horizontal-base, $btn-font-size-base, $btn-border-radius-base);
 
   &:focus {
     outline: 0;
+  }
+
+  &-lg {
+    @include button-size($btn-height-lg, $btn-padding-horizontal-lg, $btn-font-size-lg, $btn-border-radius-lg);
+  }
+
+  &-sm {
+    @include button-size($btn-height-sm, $btn-padding-horizontal-sm, $btn-font-size-sm, $btn-border-radius-sm);
   }
 }
 

@@ -7,6 +7,23 @@
   border-radius: $border-radius;
 }
 
+@mixin button-disabled($color: $btn-disabled-color, $background: $btn-disabled-bg, $border: $btn-disabled-border) {
+  &-disabled,
+  &.disabled,
+  &[disabled] {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      @include button-color($color, $background, $border);
+
+      text-shadow: none;
+      box-shadow: none;
+    }
+  }
+}
+
 @mixin button-variant-primary($color, $background) {
   @include button-color($color, $background, $background);
 
@@ -22,6 +39,8 @@
   &.active {
     @include button-color($color, #096dd9, #096dd9);
   }
+
+  @include button-disabled();
 }
 
 @mixin button-variant-other($color, $background, $border) {
@@ -58,6 +77,11 @@
 
   &:focus {
     outline: 0;
+  }
+
+  &.disabled,
+  &[disabled] {
+    cursor: not-allowed;
   }
 
   &-lg {

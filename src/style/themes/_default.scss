@@ -40,6 +40,12 @@ $border-color-base: hsl(0, 0, 85%); // base border outline of a component
 $border-width-base: 1px; // width of the border for a component
 $border-style-base: solid; // style of the border for a component
 
+$background-color-base: hsl(0, 0, 96%);
+
+// Disabled states
+$disabled-color: fade-out(#000, 0.75);
+$disabled-bg: $background-color-base;
+
 // Buttons
 $btn-font-weight: 400;
 $btn-border-radius-base: $border-radius-base;
@@ -52,6 +58,10 @@ $btn-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
 
 $btn-primary-color: #fff;
 $btn-primary-bg: $primary-color;
+
+$btn-disabled-color: $disabled-color;
+$btn-disabled-bg: $disabled-bg;
+$btn-disabled-border: $border-color-base;
 
 $btn-default-color: $text-color;
 $btn-default-bg: $component-background;

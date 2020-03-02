@@ -50,3 +50,16 @@ export const Size = () => {
     </>
   )
 }
+
+export const Disabled = () => {
+  return (
+    <>
+      <div className="button-demo">
+        <Button type="primary">Primary</Button>
+        <Button type="primary" disabled>
+          Primary(disabled)
+        </Button>
+      </div>
+    </>
+  )
+}

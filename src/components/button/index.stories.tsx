@@ -63,3 +63,18 @@ export const Disabled = () => {
     </>
   )
 }
+
+export const Ghost = () => {
+  return (
+    <div className="site-button-ghost-wrapper button-demo">
+      <Button type="primary" ghost>
+        Primary
+      </Button>
+      <Button ghost>Default</Button>
+      <Button type="dashed" ghost>
+        dashed
+      </Button>
+      <Button ghost>link</Button>
+    </div>
+  )
+}

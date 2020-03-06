@@ -19,4 +19,8 @@ $btn-prefix-cls: #{$ant-prefix}-btn;
   &-link {
     @include btn-link();
   }
+
+  &-background-ghost {
+    @include btn-background-ghost();
+  }
 }

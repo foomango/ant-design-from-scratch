@@ -14,6 +14,7 @@ export type ButtonHTMLType = typeof ButtonHTMLTypes[number]
 export interface BaseButtonProps {
   type?: ButtonType
   size?: SizeType
+  ghost?: boolean
 }
 
 export type NativeButtonProps = {
@@ -24,7 +25,7 @@ export type NativeButtonProps = {
 type ButtonProps = Partial<NativeButtonProps>
 
 export const Button: React.FunctionComponent<ButtonProps> = props => {
-  const { type, size, ...rest } = props
+  const { type, size, ghost, ...rest } = props
   const { htmlType, ...otherProps } = rest
 
   const prefixCls = 'ant-btn'
@@ -44,6 +45,7 @@ export const Button: React.FunctionComponent<ButtonProps> = props => {
   const classes = classNames(prefixCls, {
     [`${prefixCls}-${type}`]: type,
     [`${prefixCls}-${sizeCls}`]: sizeCls,
+    [`${prefixCls}-background-ghost`]: ghost,
   })
 
   return (
@@ -59,6 +61,7 @@ export const Button: React.FunctionComponent<ButtonProps> = props => {
 
 const withDefaultProps = defaultProps<ButtonProps>({
   htmlType: 'button',
+  ghost: false,
 })
 
 export default withDefaultProps(Button)

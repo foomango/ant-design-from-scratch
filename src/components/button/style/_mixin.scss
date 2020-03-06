@@ -119,3 +119,7 @@
     border-color: transparent;
   }
 }
+
+@mixin btn-background-ghost {
+  @include button-variant-other($btn-background-ghost-color, $btn-background-ghost-bg, $btn-background-ghost-border);
+}

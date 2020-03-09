@@ -12,9 +12,10 @@ const ButtonHTMLTypes = tuple('button', 'submit', 'reset')
 export type ButtonHTMLType = typeof ButtonHTMLTypes[number]
 
 export interface BaseButtonProps {
-  type?: ButtonType
-  size?: SizeType
+  block?: boolean
   ghost?: boolean
+  size?: SizeType
+  type?: ButtonType
 }
 
 export type NativeButtonProps = {
@@ -25,7 +26,7 @@ export type NativeButtonProps = {
 type ButtonProps = Partial<NativeButtonProps>
 
 export const Button: React.FunctionComponent<ButtonProps> = props => {
-  const { type, size, ghost, ...rest } = props
+  const { block, ghost, size, type, ...rest } = props
   const { htmlType, ...otherProps } = rest
 
   const prefixCls = 'ant-btn'
@@ -43,9 +44,10 @@ export const Button: React.FunctionComponent<ButtonProps> = props => {
   }
 
   const classes = classNames(prefixCls, {
-    [`${prefixCls}-${type}`]: type,
-    [`${prefixCls}-${sizeCls}`]: sizeCls,
+    [`${prefixCls}-block`]: block,
     [`${prefixCls}-background-ghost`]: ghost,
+    [`${prefixCls}-${sizeCls}`]: sizeCls,
+    [`${prefixCls}-${type}`]: type,
   })
 
   return (
@@ -60,8 +62,9 @@ export const Button: React.FunctionComponent<ButtonProps> = props => {
 }
 
 const withDefaultProps = defaultProps<ButtonProps>({
-  htmlType: 'button',
+  block: false,
   ghost: false,
+  htmlType: 'button',
 })
 
 export default withDefaultProps(Button)

@@ -27,4 +27,10 @@ $btn-prefix-cls: #{$ant-prefix}-btn;
   &-block {
     width: 100%;
   }
+
+  // To make sure that a space will be placed between character and `Icon`.
+  > .#{$iconfont-css-prefix} + span,
+  > span + .#{$iconfont-css-prefix} {
+    margin-left: 8px;
+  }
 }

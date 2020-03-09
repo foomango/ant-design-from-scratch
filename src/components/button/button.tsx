@@ -13,7 +13,9 @@ export type ButtonHTMLType = typeof ButtonHTMLTypes[number]
 
 export interface BaseButtonProps {
   block?: boolean
+  children?: React.ReactNode
   ghost?: boolean
+  icon?: React.ReactNode
   size?: SizeType
   type?: ButtonType
 }
@@ -25,8 +27,22 @@ export type NativeButtonProps = {
 
 type ButtonProps = Partial<NativeButtonProps>
 
+const wrapSpan = (child: React.ReactChild) => {
+  if (typeof child === 'string') {
+    return <span>{child}</span>
+  }
+
+  return child
+}
+
+const spanChildren = (children: React.ReactNode) => {
+  return React.Children.map(children, child =>
+    wrapSpan(child as React.ReactChild)
+  )
+}
+
 export const Button: React.FunctionComponent<ButtonProps> = props => {
-  const { block, ghost, size, type, ...rest } = props
+  const { block, children, ghost, icon, size, type, ...rest } = props
   const { htmlType, ...otherProps } = rest
 
   const prefixCls = 'ant-btn'
@@ -50,13 +66,17 @@ export const Button: React.FunctionComponent<ButtonProps> = props => {
     [`${prefixCls}-${type}`]: type,
   })
 
+  const iconNode = icon
+  const kids = children || children === 0 ? spanChildren(children) : null
+
   return (
     <button
       {...(otherProps as NativeButtonProps)}
       type={htmlType}
       className={classes}
     >
-      {props.children}
+      {iconNode}
+      {kids}
     </button>
   )
 }

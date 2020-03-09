@@ -1,4 +1,5 @@
 import React from 'react'
+import { SearchOutlined } from '@ant-design/icons'
 
 import Button from '.'
 import './style'
@@ -91,6 +92,16 @@ export const Block = () => {
       </Button>
       <Button type="link" block>
         Link
+      </Button>
+    </div>
+  )
+}
+
+export const Icon = () => {
+  return (
+    <div className="button-demo">
+      <Button type="primary" icon={<SearchOutlined />}>
+        Search
       </Button>
     </div>
   )

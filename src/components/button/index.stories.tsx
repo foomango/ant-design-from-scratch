@@ -1,5 +1,5 @@
 import React from 'react'
-import { SearchOutlined } from '@ant-design/icons'
+import { SearchOutlined, PoweroffOutlined } from '@ant-design/icons'
 
 import Button from '.'
 import './style'
@@ -105,4 +105,52 @@ export const Icon = () => {
       </Button>
     </div>
   )
+}
+
+class LoadingApp extends React.Component {
+  state = {
+    loading: false,
+    iconLoading: false,
+  }
+
+  enterLoading = () => {
+    this.setState({ loading: true })
+  }
+
+  enterIconLoading = () => {
+    this.setState({ iconLoading: true })
+  }
+
+  render() {
+    return (
+      <div className="button-demo">
+        <Button type="primary" loading>
+          Loading
+        </Button>
+        <Button type="primary" size="small" loading>
+          Loading
+        </Button>
+        <br />
+        <Button
+          type="primary"
+          loading={this.state.loading}
+          onClick={this.enterLoading}
+        >
+          Click me!
+        </Button>
+        <Button
+          type="primary"
+          icon={<PoweroffOutlined />}
+          loading={this.state.iconLoading}
+          onClick={this.enterIconLoading}
+        >
+          Click me!
+        </Button>
+      </div>
+    )
+  }
+}
+
+export const Loading = () => {
+  return <LoadingApp />
 }
